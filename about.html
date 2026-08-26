@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="من نحن - Drpatrick GPA Calc"
+    >
+
+    <title>من نحن | Drpatrick GPA Calc</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="background-effects">
+
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="glow glow-3"></div>
+
+    </div>
+
+
+    <main class="app-container">
+
+
+        <!-- HEADER -->
+
+        <header class="app-header">
+
+            <a
+                href="index.html"
+                class="brand"
+                style="text-decoration:none;color:inherit;"
+            >
+
+                <div class="brand-icon">
+                    GPA
+                </div>
+
+                <div class="brand-info">
+
+                    <h1>
+                        Drpatrick GPA Calc
+                    </h1>
+
+                    <p>
+                        حاسبة المعدل الأكاديمي
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+            >
+
+                <span id="themeIcon">🌙</span>
+
+                <span id="themeText">
+                    الوضع الداكن
+                </span>
+
+            </button>
+
+        </header>
+
+
+
+        <!-- PAGE -->
+
+        <section class="previous-gpa-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-kicker">
+                        ABOUT
+                    </span>
+
+                    <h3>
+                        من نحن
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div style="line-height:2;">
+
+                <h2 style="margin-bottom:15px;">
+                    Drpatrick GPA Calc
+                </h2>
+
+                <p style="color:var(--text-secondary);">
+
+                    أنا <strong>باتريك خالد</strong>،
+                    طالب طب أسنان، وقمت بإنشاء
+                    <strong>Drpatrick GPA Calc</strong>
+                    في أغسطس 2026 بهدف تسهيل حياة
+                    طلاب الكليات ومساعدتهم على حساب
+                    معدلهم التراكمي والفصلي بطريقة
+                    بسيطة وسريعة.
+
+                </p>
+
+
+                <br>
+
+
+                <p style="color:var(--text-secondary);">
+
+                    صُمم الموقع ليكون سهل الاستخدام
+                    ومناسبًا للطلاب، بحيث يستطيع الطالب
+                    إدخال المواد والساعات والتقديرات
+                    والحصول على حساب واضح للمعدل.
+
+                </p>
+
+
+                <br>
+
+
+                <div class="previous-gpa-note">
+
+                    🎓 الموقع مجاني بالكامل ومتاح
+                    للطلاب دون الحاجة إلى إنشاء حساب.
+
+                </div>
+
+
+                <br>
+
+
+                <h3>
+                    رؤيتنا
+                </h3>
+
+                <p style="color:var(--text-secondary);">
+
+                    هدفنا هو توفير أدوات تعليمية بسيطة
+                    ومفيدة تساعد الطلاب على متابعة
+                    مستواهم الأكاديمي واتخاذ قرارات
+                    أفضل بشأن دراستهم.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+
+        <footer class="app-footer">
+
+            <div class="footer-line"></div>
+
+            <p>
+                Drpatrick GPA Calc
+            </p>
+
+            <span>
+                © 2026 جميع الحقوق محفوظة
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- WATERMARK -->
+
+    <div class="watermark">
+
+        تم إنشاء الموقع بواسطة
+        <strong>
+            دكتور باتريك خالد
+        </strong>
+
+    </div>
+
+
+    <script>
+
+        const themeToggle =
+            document.getElementById("themeToggle");
+
+        const themeIcon =
+            document.getElementById("themeIcon");
+
+        const themeText =
+            document.getElementById("themeText");
+
+
+        function updateThemeUI(isDark) {
+
+            if (isDark) {
+
+                themeIcon.textContent = "☀️";
+
+                themeText.textContent =
+                    "الوضع الفاتح";
+
+            } else {
+
+                themeIcon.textContent = "🌙";
+
+                themeText.textContent =
+                    "الوضع الداكن";
+
+            }
+
+        }
+
+
+        function loadTheme() {
+
+            const savedTheme =
+                localStorage.getItem(
+                    "drpatrick_gpa_theme"
+                );
+
+            const isDark =
+                savedTheme === "dark";
+
+
+            if (isDark) {
+
+                document.body.classList.add(
+                    "dark-mode"
+                );
+
+            }
+
+
+            updateThemeUI(isDark);
+
+        }
+
+
+        themeToggle.addEventListener(
+            "click",
+            () => {
+
+                const isDark =
+                    document.body.classList.toggle(
+                        "dark-mode"
+                    );
+
+
+                localStorage.setItem(
+                    "drpatrick_gpa_theme",
+                    isDark
+                        ? "dark"
+                        : "light"
+                );
+
+
+                updateThemeUI(isDark);
+
+            }
+        );
+
+
+        loadTheme();
+
+    </script>
+
+</body>
+
+</html>
