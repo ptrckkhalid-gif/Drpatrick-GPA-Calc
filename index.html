@@ -3,11 +3,19 @@
 
 <head>
 
-    <!-- Google AdSense -->
+    <!-- =========================================
+         GOOGLE ADSENSE
+    ========================================== -->
+
     <script async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3498134771559877"
         crossorigin="anonymous">
     </script>
+
+
+    <!-- =========================================
+         META
+    ========================================== -->
 
     <meta charset="UTF-8">
 
@@ -31,10 +39,874 @@
         content="دكتور باتريك خالد"
     >
 
+
+    <!-- =========================================
+         TITLE
+    ========================================== -->
+
     <title>
         Drpatrick GPA Calc | حاسبة المعدل الأكاديمي
     </title>
 
+
+    <!-- =========================================
+         GOOGLE FONT
+    ========================================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================
+         CSS
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         BACKGROUND
+    ========================================== -->
+
+    <div class="background-effects">
+
+        <div class="glow glow-1"></div>
+
+        <div class="glow glow-2"></div>
+
+        <div class="glow glow-3"></div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         APPLICATION
+    ========================================== -->
+
+    <main class="app-container">
+
+
+        <!-- =====================================
+             HEADER
+        ====================================== -->
+
+        <header class="app-header">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    GPA
+                </div>
+
+
+                <div class="brand-info">
+
+                    <h1>
+                        Drpatrick GPA Calc
+                    </h1>
+
+                    <p>
+                        حاسبة المعدل التراكمي
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="themeToggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="تغيير وضع الموقع"
+            >
+
+                <span id="themeIcon">
+                    ☀️
+                </span>
+
+                <span id="themeText">
+                    الوضع الفاتح
+                </span>
+
+            </button>
+
+        </header>
+
+
+
+        <!-- =====================================
+             WELCOME
+        ====================================== -->
+
+        <section class="welcome-section">
+
+            <div class="welcome-content">
+
+                <span class="welcome-badge">
+                    ✨ Drpatrick GPA Calc
+                </span>
+
+
+                <h2>
+
+                    احسب معدلك الدراسي
+
+                    <span>
+                        بسهولة ودقة
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    احسب معدل الفصل الدراسي
+                    والمعدل التراكمي باستخدام
+                    الساعات المعتمدة والتقديرات.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             GPA RESULT
+        ====================================== -->
+
+        <section class="result-card">
+
+            <div class="result-info">
+
+                <span class="result-label">
+                    المعدل التراكمي الحالي
+                </span>
+
+
+                <div class="gpa-value">
+
+                    <strong id="gpaResult">
+                        0.00
+                    </strong>
+
+                    <span>
+                        / 4.00
+                    </span>
+
+                </div>
+
+
+                <p id="gpaMessage">
+                    أضف المواد لحساب المعدل
+                </p>
+
+            </div>
+
+
+            <div class="gpa-circle">
+
+                <div class="circle-inner">
+
+                    <span id="gpaPercentage">
+                        0%
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             GOOGLE ADSENSE
+        ====================================== -->
+
+        <section
+            class="ad-container"
+            aria-label="إعلان"
+        >
+
+            <ins
+                class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-3498134771559877"
+                data-ad-slot="3074876547"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+            ></ins>
+
+
+            <script>
+
+                (adsbygoogle = window.adsbygoogle || []).push({});
+
+            </script>
+
+        </section>
+
+
+
+        <!-- =====================================
+             STATISTICS
+        ====================================== -->
+
+        <section class="statistics-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📚
+                </div>
+
+
+                <div>
+
+                    <span>
+                        عدد المواد
+                    </span>
+
+                    <strong id="subjectsCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ⏱️
+                </div>
+
+
+                <div>
+
+                    <span>
+                        ساعات الفصل
+                    </span>
+
+                    <strong id="totalHours">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ⭐
+                </div>
+
+
+                <div>
+
+                    <span>
+                        نقاط الجودة
+                    </span>
+
+                    <strong id="totalPoints">
+                        0.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             PREVIOUS GPA
+        ====================================== -->
+
+        <section class="previous-gpa-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-kicker">
+                        المعدل السابق
+                    </span>
+
+                    <h3>
+                        بيانات الفصول السابقة
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="previous-gpa-grid">
+
+
+                <div class="field-group">
+
+                    <label for="previousGPA">
+                        المعدل التراكمي السابق
+                    </label>
+
+
+                    <input
+                        id="previousGPA"
+                        type="number"
+                        min="0"
+                        max="4"
+                        step="0.01"
+                        placeholder="مثال: 2.85"
+                    >
+
+
+                    <small>
+                        اتركه 0 إذا كان هذا أول فصل لك
+                    </small>
+
+                </div>
+
+
+
+                <div class="field-group">
+
+                    <label for="previousHours">
+                        الساعات السابقة
+                    </label>
+
+
+                    <input
+                        id="previousHours"
+                        type="number"
+                        min="0"
+                        step="0.5"
+                        placeholder="مثال: 36"
+                    >
+
+
+                    <small>
+                        إجمالي الساعات التي أنهيتها سابقًا
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="previous-gpa-note">
+
+                💡
+
+                <span>
+
+                    سيتم دمج المعدل السابق مع مواد الفصل
+                    الحالي للحصول على المعدل التراكمي الجديد.
+
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             SUBJECTS
+        ====================================== -->
+
+        <section class="subjects-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-kicker">
+                        المواد الدراسية
+                    </span>
+
+                    <h3>
+                        مواد الفصل الحالي
+                    </h3>
+
+                </div>
+
+
+                <button
+                    id="addSubjectBtn"
+                    class="primary-button"
+                    type="button"
+                >
+
+                    <span>
+                        +
+                    </span>
+
+                    إضافة مادة
+
+                </button>
+
+            </div>
+
+
+
+            <div
+                id="subjectsContainer"
+                class="subjects-container"
+            >
+
+
+                <div
+                    id="emptyState"
+                    class="empty-state"
+                >
+
+                    <div class="empty-icon">
+                        📖
+                    </div>
+
+
+                    <h4>
+                        لا توجد مواد مضافة
+                    </h4>
+
+
+                    <p>
+                        أضف مواد الفصل الحالي لبدء الحساب
+                    </p>
+
+
+                    <button
+                        id="emptyAddBtn"
+                        class="secondary-button"
+                        type="button"
+                    >
+
+                        إضافة أول مادة
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CALCULATION RESULTS
+        ====================================== -->
+
+        <section
+            id="calculationDetails"
+            class="calculation-details"
+        >
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-kicker">
+                        النتيجة
+                    </span>
+
+                    <h3>
+                        تفاصيل المعدل
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="calculation-grid">
+
+
+                <div class="calculation-item">
+
+                    <span>
+                        GPA الفصل الحالي
+                    </span>
+
+                    <strong id="semesterGPA">
+                        0.00
+                    </strong>
+
+                </div>
+
+
+
+                <div class="calculation-item">
+
+                    <span>
+                        GPA التراكمي الجديد
+                    </span>
+
+                    <strong id="cumulativeGPA">
+                        0.00
+                    </strong>
+
+                </div>
+
+
+
+                <div class="calculation-item">
+
+                    <span>
+                        إجمالي الساعات بعد الفصل
+                    </span>
+
+                    <strong id="combinedHours">
+                        0
+                    </strong>
+
+                </div>
+
+
+
+                <div class="calculation-item">
+
+                    <span>
+                        إجمالي نقاط الجودة
+                    </span>
+
+                    <strong id="combinedPoints">
+                        0.00
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ACTIONS
+        ====================================== -->
+
+        <section class="actions-section">
+
+
+            <button
+                id="calculateBtn"
+                class="calculate-button"
+                type="button"
+            >
+
+                <span class="button-icon">
+                    🧮
+                </span>
+
+                حساب المعدل
+
+            </button>
+
+
+
+            <button
+                id="resetBtn"
+                class="reset-button"
+                type="button"
+            >
+
+                <span>
+                    ↻
+                </span>
+
+                إعادة تعيين
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             GRADING SYSTEM
+        ====================================== -->
+
+        <section class="grading-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-kicker">
+                        نظام التقديرات
+                    </span>
+
+                    <h3>
+                        مقياس الدرجات المستخدم
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="grades-grid">
+
+
+                <div class="grade-item">
+                    <strong>A</strong>
+                    <span>4.00</span>
+                </div>
+
+
+                <div class="grade-item">
+                    <strong>A-</strong>
+                    <span>3.70</span>
+                </div>
+
+
+                <div class="grade-item">
+                    <strong>B+</strong>
+                    <span>3.30</span>
+                </div>
+
+
+                <div class="grade-item">
+                    <strong>B</strong>
+                    <span>3.00</span>
+                </div>
+
+
+                <div class="grade-item">
+                    <strong>B-</strong>
+                    <span>2.70</span>
+                </div>
+
+
+                <div class="grade-item">
+                    <strong>C+</strong>
+                    <span>2.30</span>
+                </div>
+
+
+                <div class="grade-item">
+                    <strong>C</strong>
+                    <span>2.00</span>
+                </div>
+
+
+                <div class="grade-item">
+                    <strong>C-</strong>
+                    <span>1.70</span>
+                </div>
+
+
+                <div class="grade-item">
+                    <strong>D</strong>
+                    <span>1.00</span>
+                </div>
+
+
+                <div class="grade-item">
+                    <strong>F</strong>
+                    <span>0.00</span>
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             FOOTER
+        ====================================== -->
+
+        <footer class="app-footer">
+
+            <div class="footer-line"></div>
+
+
+            <p>
+                Drpatrick GPA Calc
+            </p>
+
+
+            <div
+                style="
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    flex-wrap:wrap;
+                    gap:8px;
+                    margin:14px 0;
+                "
+            >
+
+
+                <a
+                    href="about.html"
+                    style="
+                        color:var(--text-secondary);
+                        text-decoration:none;
+                        font-size:12px;
+                        font-weight:700;
+                        transition:.3s;
+                    "
+                >
+                    من نحن
+                </a>
+
+
+                <span style="color:var(--text-muted);">
+                    •
+                </span>
+
+
+                <a
+                    href="privacy.html"
+                    style="
+                        color:var(--text-secondary);
+                        text-decoration:none;
+                        font-size:12px;
+                        font-weight:700;
+                        transition:.3s;
+                    "
+                >
+                    سياسة الخصوصية
+                </a>
+
+
+                <span style="color:var(--text-muted);">
+                    •
+                </span>
+
+
+                <a
+                    href="contact.html"
+                    style="
+                        color:var(--text-secondary);
+                        text-decoration:none;
+                        font-size:12px;
+                        font-weight:700;
+                        transition:.3s;
+                    "
+                >
+                    اتصل بنا
+                </a>
+
+
+                <span style="color:var(--text-muted);">
+                    •
+                </span>
+
+
+                <a
+                    href="terms.html"
+                    style="
+                        color:var(--text-secondary);
+                        text-decoration:none;
+                        font-size:12px;
+                        font-weight:700;
+                    "
+                >
+                    الشروط والأحكام
+                </a>
+
+
+            </div>
+
+
+            <span>
+                © 2026 Drpatrick GPA Calc
+                — جميع الحقوق محفوظة
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         WATERMARK
+    ========================================== -->
+
+    <div class="watermark">
+
+        تم إنشاء الموقع بواسطة
+
+        <strong>
+            دكتور باتريك خالد
+        </strong>
+
+    </div>
+
+
+
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="alert"
+        aria-live="polite"
+    >
+
+        <span id="toastIcon">
+            ✓
+        </span>
+
+
+        <span id="toastMessage">
+            تم تنفيذ العملية بنجاح
+        </span>
+
+    </div>
+
+
+
+    <!-- =========================================
+         APPLICATION SCRIPT
+    ========================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+    </html>
     <link
         href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet"
